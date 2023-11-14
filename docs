@@ -1,0 +1,117 @@
+http://127.0.0.1:8000/user
+
+This API is used to create a new user for stock exchange.
+
+REQUEST
+========
+
+METHOD : POST
+
+FormData :
+
+	name: guru
+
+
+
+RESPONSE
+=========
+
+{
+    "code": 200,
+    "message": "success",
+    "data": {
+        "name": "guru"
+    }
+}
+
+
+====================================================================================
+
+http://127.0.0.1:8000/order/
+
+This API is used to create order.
+
+REQUEST
+========
+
+METHOD : POST
+
+FORM DATA :
+===========
+	script:IOCL
+	price:100
+	userId:1
+	side:BUY
+	quantity:100
+
+RESPONSE
+==========
+
+{
+    "code": 200,
+    "message": "success",
+    "data": {
+        "orderId": 1,
+        "status": "Processing"
+    }
+}
+
+=====================================================================================
+
+http://127.0.0.1:8000/getAllOrders/
+
+This API is used to get all orders
+
+REQUEST
+=========
+
+METHOD : POST
+
+FORM DATA :
+===========
+
+<nil>
+
+RESPONSE
+==========
+
+[
+    {
+        "id": 1,
+        "script": "IOCL",
+        "side": "SELL",
+        "price": "100.0000",
+        "quantity": "1000.0000",
+        "filled_quantity": "100.0000",
+        "remaining_quantity": "900.0000",
+        "status": "Pending",
+        "created_at": "2023-11-14",
+        "updated_at": "2023-11-14",
+        "user": 1
+    }
+]
+
+====================================================================================
+http://127.0.0.1:8000/getAllTransactions/
+
+REQUEST
+========
+METHOD : GET
+
+RESPONSE
+==========
+
+[
+    {
+        "id": 1,
+        "price": "100.0000",
+        "quantity": "100.0000",
+        "script": "IOCL",
+        "created_at": "2023-11-14",
+        "buyer_id": 1,
+        "seller_id": 1
+    }
+]
+
+==================================================================================
+
